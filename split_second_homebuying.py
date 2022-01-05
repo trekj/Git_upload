@@ -1,9 +1,9 @@
 """Split Second Homebuying."""
 
 # @TODO: # Use the following variables for present value calculations.
-home_price = 100000  # Investment cost
-expected_sale_price = 120000  # Future Value of the home
-hurdle_rate = 0.10  # 0.10 = 10% # Annual Discount Rate; minimum return expected
+home_price = 115000  # Investment cost
+expected_sale_price = 130000  # Future Value of the home
+hurdle_rate = 0.09  # 0.10 = 10% # Annual Discount Rate; minimum return expected
 holding_months = 12  # Number of months until sold (until Future Value)
 
 # @TODO: Using `expected_sale_price`, `hurdle_rate`, and `holding_months`,
@@ -11,11 +11,18 @@ holding_months = 12  # Number of months until sold (until Future Value)
 # variable named `present_value`.
 # Use the **monthly** version of the present value formula. 
 # YOUR CODE HERE!
+present_value = expected_sale_price / ( 1 + hurdle_rate/12)**12
 
-print(f"Present Value is ${present_value}")
+print(f"Present Value is ${present_value: .2f}")
 
 # @TODO: Put `present_value` into a conditional statement:
 # If present value is greater than cost to buy (home_price), print a statement to buy the property:
 # Otherwise, print a statement that you will pass on the opportunity:
 # Bonus! The edge case: print that you expect to break even on this deal
 # YOUR CODE HERE
+if present_value > home_price:
+    print(f"Present Value is $ {present_value: .2f} I am making some profit, I'll buy the property")
+elif present_value < home_price:
+    print(f"Present Value is $ {present_value: .2f}, Too expensive, Ill pass")
+elif present_value == home_price:
+    print (f"Present Value is $ {present_value: .2f}, I'll but it")
