@@ -4,8 +4,11 @@
 # This function should have the following 4 parameters: home_price, expected_sale_price, hurdle_rate, holding_months
 # Inside of the function:
     # Calculate the present value
-    # HINT: Present Value = Future Value (Face Value of the Loan) / (1 + annual_discount_rate/12) ** remaining_months        
-    present_value = expected_sale_price / (1 + (hurdle_rate / 12)) ** holding_months
+    # HINT: Present Value = Future Value (Face Value of the Loan) / (1 + annual_discount_rate/12) ** remaining_months 
+
+present_value = expected_sale_price / (1 + (hurdle_rate / 12)) ** 12
+
+def price_this_home():
 
     # Put `present_value` into a conditional statement:
     # If present value is greater than cost to buy (home_price), buy it:
@@ -24,7 +27,7 @@
     net_present_value = present_value - home_price
     # @TODO: Return the net_present_value (the expected profit)
     # YOUR CODE HERE!
-
+    return net_present_value
 
 # Run the function
 npv = price_this_home(

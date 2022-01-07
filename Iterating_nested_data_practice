@@ -1,0 +1,12 @@
+table_data = [
+    ["Ticker", "Open", "Close"],
+    ["AAPL", 363.25, 363.4],
+    ["AMZN", 2756.0, 2757.99],
+    ["GOOG", 1409.1, 1408.2]
+]
+
+for row in table_data:
+    ticker = row [0]
+    print(ticker)
+    
+
