@@ -6,6 +6,7 @@ from pathlib import Path
 # YOUR CODE HERE!
 csvpath = Path("quarterly_data.csv")
 # Print the relative path (the relative location of the file)
+print(csvpath)
 print(f"The relative CSV path is {csvpath}")
 
 # Print the absolute path (The absolute location of the file on the computer)
