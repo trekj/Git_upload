@@ -10,6 +10,10 @@ equity_funding = [
 
 # Create an empty list called `big_raisers`
 # YOUR CODE HERE!
+big_raisers = []
+for row in equity_funding:
+    if row ["Amount"] >= 500000000
+
 
 # Iterate (loop) through each dictionary in the list of dictionaries.
 for equity in equity_funding:
