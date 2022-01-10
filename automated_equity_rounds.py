@@ -9,30 +9,32 @@ equity_funding = [
 ]
 
 # Create an empty list called `big_raisers`
-# YOUR CODE HERE!
+big_raisers = []
 
 # Iterate (loop) through each dictionary in the list of dictionaries.
 for equity in equity_funding:
-    # @TODO: Inside of the `for` loop, write an `if` statement that
+    # Inside of the `for` loop, write an `if` statement that
     # appends the dictionary to the `big_raisers` list
     # if the funding amount is greater than $50 million (50000000).
-    # YOUR CODE HERE!
+    if equity["Amount"] >= 50000000:
+        big_raisers.append(equity)
 
 # Set the output header
 header = ["Company", "Amount", "Series"]
 
-# @TODO: Create a Path to a new CSV file
-# YOUR CODE HERE!
+# Create a Path to a new CSV file
+csvpath = Path("large_equity_rounds.csv")
 
 print("Writing the data to a CSV file...")
-# @TODO: Open the output CSV file path using `with open`
-# YOUR CODE HERE!
-    # @TODO: Create a csvwriter
-    # YOUR CODE HERE!
+# Open the output CSV file path using `with open`
+with open(csvpath, "w") as csvfile:
+    # Create a csvwriter
+    csvwriter = csv.writer(csvfile, delimiter=",")
 
     # Write the header to the CSV file
     csvwriter.writerow(header)
 
-    # @TODO: Write the values of each dictionary inside of `big_raisers`
+    # Write the values of each dictionary inside of `big_raisers`
     # as a row in the CSV file.
-    # YOUR CODE HERE!
+    for item in big_raisers:
+        csvwriter.writerow(item.values())
